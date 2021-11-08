@@ -1,0 +1,36 @@
+[08-Nov-2021 19:08:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_plugin_active() in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php:64
+Stack trace:
+#0 /hosting/home/ascordby/multi.confort.by/wp-settings.php(409): include_once()
+#1 /hosting/home/ascordby/multi.confort.by/wp-config.php(95): require_once('/hosting/home/a...')
+#2 /hosting/home/ascordby/multi.confort.by/wp-load.php(50): require_once('/hosting/home/a...')
+#3 /hosting/home/ascordby/multi.confort.by/wp-blog-header.php(13): require_once('/hosting/home/a...')
+#4 /hosting/home/ascordby/multi.confort.by/index.php(17): require('/hosting/home/a...')
+#5 {main}
+  thrown in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php on line 64
+[08-Nov-2021 19:08:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_plugin_active() in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php:64
+Stack trace:
+#0 /hosting/home/ascordby/multi.confort.by/wp-settings.php(409): include_once()
+#1 /hosting/home/ascordby/multi.confort.by/wp-config.php(95): require_once('/hosting/home/a...')
+#2 /hosting/home/ascordby/multi.confort.by/wp-load.php(50): require_once('/hosting/home/a...')
+#3 /hosting/home/ascordby/multi.confort.by/wp-blog-header.php(13): require_once('/hosting/home/a...')
+#4 /hosting/home/ascordby/multi.confort.by/index.php(17): require('/hosting/home/a...')
+#5 {main}
+  thrown in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php on line 64
+[08-Nov-2021 19:08:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_plugin_active() in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php:64
+Stack trace:
+#0 /hosting/home/ascordby/multi.confort.by/wp-settings.php(409): include_once()
+#1 /hosting/home/ascordby/multi.confort.by/wp-config.php(95): require_once('/hosting/home/a...')
+#2 /hosting/home/ascordby/multi.confort.by/wp-load.php(50): require_once('/hosting/home/a...')
+#3 /hosting/home/ascordby/multi.confort.by/wp-blog-header.php(13): require_once('/hosting/home/a...')
+#4 /hosting/home/ascordby/multi.confort.by/index.php(17): require('/hosting/home/a...')
+#5 {main}
+  thrown in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php on line 64
+[08-Nov-2021 19:08:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function is_plugin_active() in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php:64
+Stack trace:
+#0 /hosting/home/ascordby/multi.confort.by/wp-settings.php(409): include_once()
+#1 /hosting/home/ascordby/multi.confort.by/wp-config.php(95): require_once('/hosting/home/a...')
+#2 /hosting/home/ascordby/multi.confort.by/wp-load.php(50): require_once('/hosting/home/a...')
+#3 /hosting/home/ascordby/multi.confort.by/wp-blog-header.php(13): require_once('/hosting/home/a...')
+#4 /hosting/home/ascordby/multi.confort.by/index.php(17): require('/hosting/home/a...')
+#5 {main}
+  thrown in /hosting/home/ascordby/multi.confort.by/wp-content/plugins/uct-custom-taxonomies/uct-custom-taxonomies.php on line 64

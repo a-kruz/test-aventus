@@ -1,0 +1,47 @@
+/*
+Theme Name:   Unite Child
+Theme URI:    http://example.com
+Description:  Unite Child Theme
+Author:       Alex Kruz
+Author URI:   http://example.com
+Template:     unite
+Version:      1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  unitechild
+Tags:         one-column, two-columns, right-sidebar, translation-ready, custom-header,  custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, theme-options, threaded-comments, portfolio, photography, e-commerce
+*/
+
+/* footer to down: */
+html,
+body {
+    height: 100%;
+}
+#page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.header-area {
+    flex: 0 0 auto;
+}
+.site-content {
+    flex: 1 0 auto;
+}
+footer {
+    flex-shrink: 0;
+}
+
+/* custom styles: */
+.property-card {
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 15%);
+    padding: 10px 15px 25px;
+}
+
+.property-card__title-link {
+    font-size: 24px;
+}
+.nav-link__property.active {
+    text-decoration: none;
+    background-color: #eee;
+}
