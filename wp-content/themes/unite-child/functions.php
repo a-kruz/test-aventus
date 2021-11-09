@@ -47,15 +47,15 @@ function uct_custom_acf_blocks() {
  */
 // Add hooks only during an Ajax request.
 if (wp_doing_ajax()) {
-	
-	add_action('wp_ajax_myfilter', 'uct_get_properties_by_ajax');
-	add_action('wp_ajax_nopriv_myfilter', 'uct_get_properties_by_ajax');
 
-	function uct_get_properties_by_ajax() {
-		
-		if (!$_GET['property_id']) {
-			die();
-		}
+    add_action('wp_ajax_myfilter', 'uct_get_properties_by_ajax');
+    add_action('wp_ajax_nopriv_myfilter', 'uct_get_properties_by_ajax');
+
+    function uct_get_properties_by_ajax() {
+            
+        if (!$_GET['property_id']) {
+            die();
+        }
 
         if (false !== ($property_list = get_transient( 'property_id_'.$_GET['property_id'] ))) {
 
