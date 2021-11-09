@@ -47,61 +47,66 @@ function uct_custom_acf_blocks() {
  */
 // Add hooks only during an Ajax request.
 if (wp_doing_ajax()) {
+	
+	add_action('wp_ajax_myfilter', 'uct_get_properties_by_ajax');
+	add_action('wp_ajax_nopriv_myfilter', 'uct_get_properties_by_ajax');
 
-    add_action('wp_ajax_myfilter', 'uct_get_properties_by_ajax');
-    add_action('wp_ajax_nopriv_myfilter', 'uct_get_properties_by_ajax');
+	function uct_get_properties_by_ajax() {
+		
+		if (!$_GET['property_id']) {
+			die();
+		}
 
-    function uct_get_properties_by_ajax() {
-            
-        if (!$_GET['property_id']) {
-            die();
-        }
+		if (!isset($_SERVER['CONTENT_TYPE']) || strtolower($_SERVER['CONTENT_TYPE']) != 'application/x-www-form-urlencoded') {
+			die();
+		}
 
-        if (false !== ($property_list = get_transient( 'property_id_'.$_GET['property_id'] ))) {
 
-            echo $property_list;
+		if (false !== ($property_list = get_transient( 'property_id_'.$_GET['property_id'] ))) {
 
-        } else {
-            
-            global $post;
-            $args = [
-                'post_type'   => 'property',
-                'numberposts' => 10,
-                'tax_query' => [
-                    [
-                        'taxonomy' => 'agency',
-                        'field' => 'term_id', 
-                        'terms' => $_GET['property_id'],
-                    ]
-                ]
-            ];
-            $my_properties = get_posts( $args );
+			echo $property_list;
 
-            if ( $my_properties ) :
+		} else {
 
-                foreach ($my_properties as $post) :
-                    setup_postdata($post);
+			global $post;
+			$args = [
+				'post_type'   => 'property',
+				'numberposts' => 10,
+				'tax_query' => [
+					[
+						'taxonomy' => 'agency',
+						'field' => 'term_id', 
+						'terms' => $_GET['property_id'],
+					]
+				]
+			];
+			$my_properties = get_posts( $args );
 
-                    ob_start();
-                    get_template_part( 'content', 'properties' );
-                    $property_list .= ob_get_clean();
+			if ( $my_properties ) :
 
-                endforeach;
+				foreach ($my_properties as $post) :
+					setup_postdata($post);
 
-                echo $property_list;
-                set_transient( 'property_id_'.$_GET['property_id'], $property_list, 12 * HOUR_IN_SECONDS );
+					ob_start();
+					get_template_part( 'content', 'properties' );
+					$property_list .= ob_get_clean();
 
-            else :
-                echo 'Объявления в категории отсутствуют.';
-            endif;
+				endforeach;
 
-            wp_reset_postdata();
-            
-        }
+				echo $property_list;
+				set_transient( 'property_id_'.$_GET['property_id'], $property_list, 12 * HOUR_IN_SECONDS );
 
-        die();
-    }
+			else :
+				echo 'Объявления в категории отсутствуют.';
+			endif;
 
+			wp_reset_postdata();
+
+		}
+
+		die();
+	}
+	
 }
 
 
@@ -128,7 +133,7 @@ function uct_home_custom_js() {
                     elem.classList.add('active');
 
                     fetch(ajaxUrl + "?property_id=" + elem.getAttribute('data-term-id') + "&action=myfilter", { 
-                            method: "GET", 
+                            method: "GET",
                             headers: {"content-type":"application/x-www-form-urlencoded"} 
                         })
                         .then( response => {
